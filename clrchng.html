@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.dvcntr{
+position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+</style>
+</head>
+<body>
+
+<p>A script on this page starts the background color change dynamically.</p>
+
+<div id="demo" class="dvcntr"></div>
+
+<script>
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+	document.getElementById('demo').style.backgroundColor = colors();
+}
+function colors() {
+  let colorArray = [];    
+
+  for(let i =0; i < 3 ; i++){
+    colorArray.push(Math.floor(Math.random() * (255 - 0) + 0));
+  }
+  // rgb -> hex
+  let color = colorArray
+    .map( x => x.toString(16))
+    .join('');
+
+  return `#${color}`;
+}
+</script>
+
+</body>
+</html>
+
