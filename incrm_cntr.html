@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Incrementing counter</title>
+    <style>
+        .dvcntr{
+        position: absolute;
+          margin: auto;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          border-radius: 3px;
+
+        }
+        a{
+            font-size: 30px;
+            text-align: center;
+            color: beige;
+            font-family: arial;    
+        }
+        </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var clicks = 0;
+    var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+	clicks += 1;
+    document.getElementById("clicks").innerHTML = clicks;
+}
+    </script>
+    <div class="dvcntr"><a id="clicks">0</a></div>
+
+</body>
+</html>
